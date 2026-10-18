@@ -1,0 +1,13 @@
+# Template for go-librespot v0.10.5. Do not store credentials in this repository.
+device_name: Minuet
+device_type: speaker
+audio_backend: alsa
+audio_device: "plughw:CARD=tegrahda,DEV=3"
+zeroconf_enabled: true
+credentials:
+  type: device_auth
+server:
+  enabled: true
+  address: "127.0.0.1"
+  port: 3678
+

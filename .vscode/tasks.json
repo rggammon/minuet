@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "minuet: build",
+            "type": "shell",
+            "command": "${env:HOME}/.cargo/bin/cargo",
+            "args": ["build", "--locked"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": ["$rustc"]
+        },
+        {
+            "label": "minuet: check",
+            "type": "shell",
+            "command": "${env:HOME}/.cargo/bin/cargo",
+            "args": ["clippy", "--locked", "--all-targets", "--", "-D", "warnings"],
+            "problemMatcher": ["$rustc"]
+        }
+    ]
+}
+

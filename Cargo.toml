@@ -1,0 +1,28 @@
+[package]
+name = "minuet"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+license = "GPL-3.0-only"
+description = "A touchscreen Spotify Connect player for the original Jetson Nano"
+publish = false
+build = "build.rs"
+
+[dependencies]
+slint = { version = "=1.18.1", default-features = false, features = [
+    "std",
+    "compat-1-18",
+    "backend-winit-x11",
+    "renderer-femtovg",
+] }
+
+[build-dependencies]
+slint-build = "=1.18.1"
+
+[profile.dev]
+debug = 0
+incremental = false
+
+[profile.release]
+strip = true
+
